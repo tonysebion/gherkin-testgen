@@ -10,6 +10,9 @@ npx gherkin-testgen --file .\features\feedback\01-basic.feature --pw .\tests --s
 
 # Watch for changes in your features directory
 npx gherkin-testgen --watch --dir .\features --pw .\tests --sd .\step_definitions --app http://localhost:3001
+
+# Use directly from GitHub (latest version)
+npx github:tonysebion/gherkin-testgen --file .\features\feedback\01-basic.feature --pw .\tests --sd .\step_definitions --app http://localhost:3001
 ```
 
 ## Features
@@ -37,6 +40,19 @@ npx gherkin-testgen --pw .\tests --sd .\step_definitions --app http://localhost:
 
 # Watch a directory for changes
 npx gherkin-testgen --watch --pw .\tests --sd .\step_definitions --app http://localhost:3001 --dir .\features
+```
+
+### Using directly from GitHub
+
+You can run the latest version directly from GitHub without waiting for npm registry updates:
+
+```bash
+# Use the latest version from GitHub
+npx github:tonysebion/gherkin-testgen --pw .\tests --sd .\step_definitions --app http://localhost:3001 --file .\features\feedback\01-basic.feature
+
+# Specify a specific branch, tag, or commit
+npx github:tonysebion/gherkin-testgen#main --file .\features\feedback\01-basic.feature
+npx github:tonysebion/gherkin-testgen#v1.0.1 --file .\features\feedback\01-basic.feature
 ```
 
 ### Installation (Optional)
