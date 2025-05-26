@@ -1,0 +1,52 @@
+{
+  "name": "gherkin-testgen",
+  "version": "1.0.0",
+  "description": "Generate Playwright and Cucumber tests from Gherkin feature files.",
+  "main": "index.js",
+  "bin": {
+    "gherkin-testgen": "scripts/bin/gherkin-testgen.js"
+  },
+  "scripts": {
+    "test": "npm run test:e2e",
+    "test:cucumber": "npx cucumber-js --require-module ts-node/register --require features/step_definitions/**/*.ts --require features/support/**/*.ts features/**/*.feature",
+    "test:playwright": "playwright test",
+    "test:e2e": "npm run test:cucumber && npm run test:playwright",
+    "prepare": "node -e \"try { require('fs').chmodSync('./scripts/bin/gherkin-testgen.js', '0755'); } catch(e) { /* windows */ }\"",
+    "lint": "eslint . --ext .js",
+    "start": "node scripts/bin/gherkin-testgen.js"
+  },
+  "keywords": [
+    "gherkin",
+    "cucumber",
+    "playwright",
+    "test-generation",
+    "bdd",
+    "testing",
+    "test",
+    "generator",
+    "cli"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "author": "Tony",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/gherkin-testgen.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/gherkin-testgen/issues"
+  },
+  "homepage": "https://github.com/yourusername/gherkin-testgen#readme",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.3.0",
+    "@cucumber/pretty-formatter": "^1.0.1",
+    "@playwright/test": "^1.52.0",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "yargs": "^17.7.2"
+  },
+  "type": "module"
+}

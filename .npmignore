@@ -1,0 +1,41 @@
+# Ignore test-related files when publishing to npm
+tests/
+test/
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+features/
+
+# Ignore GitHub-specific files
+.github/
+.gitignore
+.git/
+
+# Ignore development files
+*.log
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Ignore CI/CD configuration
+.travis.yml
+.gitlab-ci.yml
+.circleci/
+appveyor.yml
+
+# Ignore documentation sources (we keep the compiled docs)
+docs/src/
+docs/build-scripts/
+
+# Ignore development config files
+.eslintrc*
+.prettierrc*
+.editorconfig
+tsconfig.json
+jest.config.js
+
+# Keep documentation and examples
+!docs/
+!examples/
